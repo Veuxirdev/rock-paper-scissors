@@ -56,9 +56,39 @@ function getHumanChoice(){
     return humanVal.replace(humanVal[0],humanVal[0].toUpperCase());
 
 }
-getHumanChoice();
 // Make the game logic
 
 function playRound(humanChoice, computerChoice){
-    //
+    // Compare the choice of the human and the computer and return the current score for both
+
+    if(humanChoice === computerChoice){
+        console.log("Draw");
+        return `Computer: ${computerScore}. Human:${humanScore}.`
+    } else if(
+            (humanChoice === "Paper" && computerChoice === "Rock") ||
+            (humanChoice === "Scissors" && computerChoice === "Paper") ||
+            (humanChoice === "Rock" && computerChoice === "Scissors")
+        ){
+            humanScore++;
+            console.log(`You Win! ${humanChoice} beats ${computerChoice}.`);
+            return `Computer: ${computerScore}. Human:${humanScore}.`
+    } else {
+            computerScore++
+            console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+            return `Computer: ${computerScore}. Human:${humanScore}.`
+    }
 }
+
+//Make 5 rounds
+
+for(let i = 0; i < 5; i++){
+    playRound(getHumanChoice(), getComputerChoice());
+}
+// Final score
+    if(humanScore > computerScore){
+        console.log("You Win The Game!");
+    } else if(computerScore > humanScore){
+        console.log("You lose The Game!");
+    } else {
+        console.log("The Game Ends in Draw")
+    }
