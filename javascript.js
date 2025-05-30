@@ -1,12 +1,10 @@
 // Create values used in the game
+let humanScore = 0;
+let computerScore = 0;
 
-const paperVal = "Paper";
-const scissorsVal = "Scissors";
-const rockVal = "Rock";
+// Do computerChoice function
 
-// Make computerChoice function
-
-function computerChoice(){
+function getComputerChoice(){
 
     // Create a value that returns a number between 1 and 3
 
@@ -15,11 +13,11 @@ function computerChoice(){
     // if randomVal is 1 return paper, if 2 return Scissors, if 3 return Rock
  
     if(randomVal === 1){
-        return paperVal;
+        return "Paper";
     } else if (randomVal === 2){
-        return scissorsVal;
+        return "Scissors";
     } else if (randomVal ===  3){
-        return rockVal;
+        return "Rock";
     } 
 
     // in one line
@@ -48,4 +46,19 @@ function computerChoice(){
      */
 }
 
-computerChoice();
+// Do human choice function
+
+function getHumanChoice(){
+
+    // Make a variable for the choice of the user using a prompt (Case-insensitive)
+
+    const humanVal = prompt("Select: Paper, Scissors, Rock. Make sure to uppercase the first letter").toLowerCase();
+    return humanVal.replace(humanVal[0],humanVal[0].toUpperCase());
+
+}
+getHumanChoice();
+// Make the game logic
+
+function playRound(humanChoice, computerChoice){
+    //
+}
