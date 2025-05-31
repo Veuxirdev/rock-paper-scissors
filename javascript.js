@@ -81,10 +81,12 @@ function playRound(humanChoice, computerChoice){
 }
 
 //Make 5 rounds
-
-for(let i = 0; i < 5; i++){
+setTimeout(() => {
+    for(let i = 0; i < 5; i++){
     playRound(getHumanChoice(), getComputerChoice());
 }
+}, 1000);
+
 // Final score
     if(humanScore > computerScore){
         console.log("You Win The Game!");
