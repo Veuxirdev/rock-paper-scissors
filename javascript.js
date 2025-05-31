@@ -52,8 +52,9 @@ function getHumanChoice(){
 
     // Make a variable for the choice of the user using a prompt (Case-insensitive)
 
-    const humanVal = prompt("Select: Paper, Scissors, Rock. Make sure to uppercase the first letter").toLowerCase();
-    return humanVal.replace(humanVal[0],humanVal[0].toUpperCase());
+    let humanVal = prompt("Select: Paper, Scissors, Rock. Make sure to uppercase the first letter").toLowerCase();
+    humanVal = humanVal.replace(humanVal[0],humanVal[0].toUpperCase());
+    return humanVal;
 
 }
 // Make the game logic
