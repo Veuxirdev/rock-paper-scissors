@@ -52,7 +52,7 @@ function getHumanChoice(){
 
     // Make a variable for the choice of the user using a prompt (Case-insensitive)
 
-    let humanVal = prompt("Select: Paper, Scissors, Rock. Make sure to uppercase the first letter").toLowerCase();
+    let humanVal = prompt("Chose One: Rock, Paper or Scissors.").toLowerCase();
     humanVal = humanVal.replace(humanVal[0],humanVal[0].toUpperCase());
     return humanVal;
 
@@ -75,7 +75,7 @@ function playRound(humanChoice, computerChoice){
             return `Computer: ${computerScore}. Human:${humanScore}.`
     } else {
             computerScore++
-            console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+            console.log(`You Lose ${computerChoice} beats ${humanChoice}`);
             return `Computer: ${computerScore}. Human:${humanScore}.`
     }
 }
@@ -85,7 +85,6 @@ setTimeout(() => {
     for(let i = 0; i < 5; i++){
     playRound(getHumanChoice(), getComputerChoice());
 }
-}, 1000);
 
 // Final score
     if(humanScore > computerScore){
@@ -93,5 +92,8 @@ setTimeout(() => {
     } else if(computerScore > humanScore){
         console.log("You lose The Game!");
     } else {
-        console.log("The Game Ends in Draw")
+        console.log("The Game Ends in Draw");
     }
+
+}, 1000);
+
